@@ -325,6 +325,11 @@ func makeAccessorStage(pair []string) evaluationOperator {
 				coreValue = coreValue.Elem()
 			}
 
+			if coreValue.Kind() == reflect.Map {
+				value = coreValue.MapIndex(reflect.ValueOf(pair[i])).Interface()
+				continue
+			}
+
 			if coreValue.Kind() != reflect.Struct {
 				return nil, errors.New("Unable to access '" + pair[i] + "', '" + pair[i-1] + "' is not a struct")
 			}
