@@ -178,13 +178,13 @@ func TestParsingFailure(test *testing.T) {
 			Input:    "foo.Bar.",
 			Expected: HANGING_ACCESSOR,
 		},
-		ParsingFailureTest{
+		// ParsingFailureTest{
 
-			// this is expected to change once there are structtags in place that allow aliasing of fields
-			Name:     "Unexported parameter access",
-			Input:    "foo.bar",
-			Expected: UNEXPORTED_ACCESSOR,
-		},
+		// 	// this is expected to change once there are structtags in place that allow aliasing of fields
+		// 	Name:     "Unexported parameter access",
+		// 	Input:    "foo.bar",
+		// 	Expected: UNEXPORTED_ACCESSOR,
+		// },
 		ParsingFailureTest{
 			Name:     "Incomplete Hex",
 			Input:    "0x",
